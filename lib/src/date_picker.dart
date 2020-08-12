@@ -38,6 +38,7 @@ class DatePicker {
   /// onClose: [DateVoidCallback] date picker closed event
   /// onChange: [DateValueCallback] selected date time changed event
   /// onConfirm: [DateValueCallback] pressed title confirm widget event
+  /// autoClose: [autoClose] the picker is auto close when confirm or cancel default is true ,if is false need call Navigator.pop(context); to close it
   static void showDatePicker(
     BuildContext context, {
     DateTime minDateTime,
