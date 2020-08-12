@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'date_picker_theme.dart';
 import 'date_picker_constants.dart';
+import 'date_picker_theme.dart';
 import 'date_time_formatter.dart';
 import 'i18n/date_picker_i18n.dart';
 import 'widget/date_picker_widget.dart';
@@ -52,6 +52,7 @@ class DatePicker {
     DateValueCallback onChange,
     DateValueCallback onConfirm,
     int minuteDivider = 1,
+    bool autoClose = true,
     bool onMonthChangeStartWithFirstDate = false,
   }) {
     // handle the range of datetime
@@ -95,13 +96,17 @@ class DatePicker {
         pickerMode: pickerMode,
         pickerTheme: pickerTheme,
         onCancel: () {
-          Navigator.pop(context);
+          if (autoClose) {
+            Navigator.pop(context);
+          }
           if (onCancel != null) {
             onCancel();
           }
         },
         onConfirm: (DateTime dateTime, List<int> selectedIndex) {
-          Navigator.pop(context);
+          if (autoClose) {
+            Navigator.pop(context);
+          }
           if (onConfirm != null) {
             onConfirm(dateTime, selectedIndex);
           }
