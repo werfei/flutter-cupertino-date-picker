@@ -130,7 +130,6 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
     if (widget.onCancel != null) {
       widget.onCancel();
     }
-    Navigator.pop(context);
   }
 
   /// pressed confirm widget
@@ -139,7 +138,6 @@ class _DatePickerWidgetState extends State<DatePickerWidget> {
       DateTime dateTime = DateTime(_currYear, _currMonth, _currDay);
       widget.onConfirm(dateTime, _calcSelectIndexList());
     }
-    Navigator.pop(context);
   }
 
   /// notify selected date changed
