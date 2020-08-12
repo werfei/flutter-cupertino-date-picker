@@ -95,8 +95,8 @@ class DatePicker {
         pickerMode: pickerMode,
         pickerTheme: pickerTheme,
         onCancel: () {
+          Navigator.pop(context);
           if (onCancel != null) {
-            Navigator.pop(context);
             onCancel();
           }
         },
